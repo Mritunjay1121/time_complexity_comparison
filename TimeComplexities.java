@@ -8,6 +8,8 @@ public class TimeComplexities {
         oOfNSquared();
         oOfNLogN();
         oOfLogN();
+        aToN();
+        nFactorial();
         System.out.println("ENDING FOR JAVA ................");
     }
 
@@ -91,4 +93,36 @@ public class TimeComplexities {
         long end = System.nanoTime();
         System.out.println("Time taken for a logn operation on " + count_logn + " is: " + (end - start) / 1e9 + " seconds");
     }
+
+    public static void aToN() {
+        long a = 2;  
+        long n = 100000;  
+
+        long start = System.nanoTime();
+
+        long result = 1;
+        for (long i = 0; i < n; i++) {
+            result *= a;
+        }
+
+        long end = System.nanoTime();
+
+        System.out.println("Time taken for a a^n operation on a = " + a + " and n= " + n + "is : " + (end - start) / 1e9 + " seconds");
+    }
+
+    public static void nFactorial() {
+        int n = 20; 
+        long start = System.nanoTime();
+        long result = 1;
+        for (int i = 1; i <= n; i++) {
+            result *= i;
+        }
+        long end = System.nanoTime();
+        System.out.println("Time taken for a n-factorial operation on n= " + n + "is : " + (end - start) / 1e9 + " seconds");
+
+    }
+
+
+
+
 }

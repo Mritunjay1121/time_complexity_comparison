@@ -94,4 +94,43 @@ logn_time = end_time_logn - start_time_logn
 
 print(f"Time taken for a logn operation on {count_logn} is : ",logn_time)
 
+
+
+## O(a^n)
+
+
+def power(a, n):
+    result = 1
+    for _ in range(n):
+        result *= a
+    return result
+
+a = 2
+n = 100000
+
+start_time_o_a_power_n = time.time()
+result = power(a, n)
+end_time_o_a_power_n = time.time()
+a_raise_n_time=end_time_o_a_power_n-start_time_o_a_power_n
+
+print(f"Time taken for a a^n operation on a = {a} and n = {n} is : ",a_raise_n_time)
+
+
+
+### O(n!)
+
+
+
+
+n_fact = 20  
+start_n_fact = time.time()
+result = 1
+for i in range(1, n + 1):
+    result *= i
+end_n_fact= time.time()
+time__n_fact=end_n_fact-start_n_fact
+
+print(f"Time taken for a n-factorial operation on n = {n_fact} is : ",time__n_fact)
+
+
 print("ENDING FOR PYTHON ................")

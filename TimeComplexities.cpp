@@ -93,12 +93,51 @@ void o_of_logn() {
     cout << "Time taken for a logn operation on " << count_logn << " is: " << duration.count() / 1e6 << " seconds" << endl;
 }
 
+long long power(long long a, unsigned long long n) {
+    long long result = 1;
+    for (unsigned long long i = 0; i < n; ++i) {
+        result *= a;
+    }
+    return result;
+}
+
+void a_to_n() {
+    long long a = 2;  // Base
+    unsigned long long n = 100000;  // Exponent
+
+    auto start = high_resolution_clock::now();
+    long long result = power(a, n);
+    auto stop = high_resolution_clock::now();
+
+    auto duration = duration_cast<microseconds>(stop - start);
+    cout << "Time taken for a^n operation on a = " << a << " and n = "<< " n is : " << duration.count() / 1e6 << " seconds" << endl;
+    
+}
+void n_factorial() {
+    int n = 20;  // Example n, keep it small to avoid overflow
+    auto start = high_resolution_clock::now();
+    long long result = 1;
+    for (int i = 1; i <= n; ++i) {
+        result *= i;
+    }
+    auto stop = high_resolution_clock::now();
+
+    auto duration = duration_cast<microseconds>(stop - start);
+    cout << "Time taken for n-factorial operation on n = "<< n << " is : " << duration.count() / 1e6 << " seconds" << endl;
+
+    
+   
+}
+
+
 int main() {
     cout << "STARTING FOR CPP ................" << endl;
     o_of_n();
     o_of_n_squared();
     o_of_n_logn();
     o_of_logn();
+    a_to_n();
+    n_factorial();
     cout << "ENDING FOR CPP ................" << endl;
     return 0;
 }
